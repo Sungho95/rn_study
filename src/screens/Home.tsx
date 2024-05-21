@@ -1,5 +1,5 @@
 import React from 'react';
-import {Animated, Dimensions, Text} from 'react-native';
+import {Animated, Dimensions, Image, Text} from 'react-native';
 import View = Animated.View;
 
 const windowWidth = Dimensions.get('window').width;
@@ -50,11 +50,7 @@ function Character() {
   return (
     <View style={{flex: 1}}>
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Hello!</Text>
-        <Text>Hello!</Text>
-        <Text>Hello!</Text>
-        <Text>Hello!</Text>
-        <Text>Hello!</Text>
+        <Image source={require('../assets/rn.png')} />
       </View>
     </View>
   );
