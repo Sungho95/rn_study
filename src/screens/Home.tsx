@@ -15,7 +15,7 @@ function HomeScreen() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await checkMember(1234);
-      console.log(response);
+      console.log('response = ', response?.data);
     };
     fetchData();
   }, []);
