@@ -24,18 +24,6 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({title}) => (
   <Text style={{fontSize: RFPercentage(4), fontWeight: 'bold'}}>{title}</Text>
 );
 
-// const LeftTitle = () => {
-//   const navigation = useNavigation();
-//   return (
-//     <Icon
-//       name="arrow-back"
-//       size={iconSize}
-//       style={{marginLeft: marginSize}}
-//       onPress={() => navigation.navigate('Home')}
-//     />
-//   );
-// };
-
 function BottomTabNavigator() {
   return (
     <NavigationContainer>

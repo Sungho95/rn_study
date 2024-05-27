@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from "react";
 import {Animated, Dimensions, Image, Text} from 'react-native';
 import View = Animated.View;
 import {checkMember} from '../services/MemberService.ts';
+import DeviceInfo, { getUniqueId } from "react-native-device-info";
 
 const windowWidth = Dimensions.get('window').width;
 const iconSize = windowWidth * 0.095;
@@ -12,13 +13,6 @@ const smallSize = windowWidth * 0.02;
 const bigSize = windowWidth * 0.07;
 
 function HomeScreen() {
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await checkMember(1234);
-      console.log('response = ', response?.data);
-    };
-    fetchData();
-  }, []);
   return (
     <View style={{flex: 1}}>
       <TodaySteps />
