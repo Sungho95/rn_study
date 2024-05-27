@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {Animated, Dimensions, Image, Text} from 'react-native';
 import View = Animated.View;
-import {checkMember} from '../services/MemberService.ts';
-import DeviceInfo, { getUniqueId } from "react-native-device-info";
 
 const windowWidth = Dimensions.get('window').width;
 const iconSize = windowWidth * 0.095;
