@@ -7,6 +7,7 @@ const instance = axios.create({
   timeout: 1000,
   headers: {
     'Content-Type': 'application/json',
+    'Media-Type': 'application/json',
   },
 });
 
