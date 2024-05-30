@@ -18,7 +18,7 @@ const App = () => {
         if (response?.data.data) {
           await login(uniqueId, uniqueId);
         } else {
-          Alert.alert('안녕안녕', '메세지메세지메세지?', [
+          Alert.alert('첫 번째 알럿', '메시지', [
             {
               text: '아니',
               onPress: () => console.log('Permission denied'),
@@ -27,11 +27,23 @@ const App = () => {
             {
               text: '그래',
               onPress: async () => {
-                await regist(uniqueId, uniqueId, true, true);
-                await login(uniqueId, uniqueId);
+                Alert.alert('두 번째 알럿', '메시지', [
+                  {
+                    text: '아니',
+                    onPress: () => console.log('Permission denied'),
+                    style: 'cancel',
+                  },
+                  {
+                    text: '그래',
+                    onPress: async () => {},
+                  },
+                ]);
               },
             },
           ]);
+
+          await regist(uniqueId, uniqueId, true, true);
+          await login(uniqueId, uniqueId);
         }
       } catch (error) {
         console.log(error);
