@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator.tsx';
 import DeviceInfo from 'react-native-device-info';
 import {login, memberCheck, regist} from './src/services/MemberService.ts';
-import {Alert} from 'react-native';
+import {pushNotificationAlert} from './src/alerts/PushNotificationAlert.ts';
+import {marketingNotificationAlert} from './src/alerts/MarketingNotificationAlert.ts';
 
 const App = () => {
   const [uniqueId, setUniqueId] = useState<string>('');
@@ -18,31 +19,14 @@ const App = () => {
         if (response?.data.data) {
           await login(uniqueId, uniqueId);
         } else {
-          Alert.alert('첫 번째 알럿', '메시지', [
-            {
-              text: '아니',
-              onPress: () => console.log('Permission denied'),
-              style: 'cancel',
-            },
-            {
-              text: '그래',
-              onPress: async () => {
-                Alert.alert('두 번째 알럿', '메시지', [
-                  {
-                    text: '아니',
-                    onPress: () => console.log('Permission denied'),
-                    style: 'cancel',
-                  },
-                  {
-                    text: '그래',
-                    onPress: async () => {},
-                  },
-                ]);
-              },
-            },
-          ]);
-
-          await regist(uniqueId, uniqueId, true, true);
+          const pushNotification = await pushNotificationAlert();
+          const marketingNotification = await marketingNotificationAlert();
+          await regist(
+            uniqueId,
+            uniqueId,
+            pushNotification,
+            marketingNotification,
+          );
           await login(uniqueId, uniqueId);
         }
       } catch (error) {
