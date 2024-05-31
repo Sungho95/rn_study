@@ -32,7 +32,6 @@ export const regist = async (
   pushNotification: boolean,
   marketingNotification: boolean,
 ) => {
-  console.log(deviceInfo);
   try {
     return await instance.post('/api/v1/member', {
       deviceId: deviceId,
