@@ -5,7 +5,7 @@ import CalendarScreen from '../screens/Calendar.tsx';
 import MyPageScreen from '../screens/MyPage.tsx';
 import SettingsScreen from '../screens/Settings.tsx';
 import TitleScreen from '../screens/Title.tsx';
-import { Dimensions, Text } from 'react-native';
+import {Dimensions, Text} from 'react-native';
 import {RFPercentage} from 'react-native-responsive-fontsize';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from '../screens/Home.tsx';

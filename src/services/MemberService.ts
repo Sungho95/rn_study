@@ -22,7 +22,6 @@ export const memberCheck = async (deviceId: string) => {
     });
   } catch (error) {
     console.error(error);
-    return null;
   }
 };
 
